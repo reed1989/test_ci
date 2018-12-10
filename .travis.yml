@@ -1,0 +1,12 @@
+language: cpp
+
+dist: xenial
+
+
+jobs:
+    include:
+        - stage: UT Execute stage
+          name: "UT Execute"
+          #no need to do clone tools
+          before_install: git clone https://github.com/abseil/googletest.git /home/travis/gtest
+          script: ls /home/travis/gtest
