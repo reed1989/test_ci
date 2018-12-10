@@ -2,11 +2,13 @@ language: cpp
 
 dist: xenial
 
+env:
+    - TEST_CI_PATH=${HOME}/reed1989/test_ci
 
 jobs:
     include:
         - stage: UT Execute stage
           name: "UT Execute"
           #no need to do clone tools
-          before_install: git clone https://github.com/abseil/googletest.git /home/travis/gtest
-          script: ls /home/travis/gtest
+          before_install: git clone https://github.com/abseil/googletest.git ${HOME}/gtest
+          script: python3 ${TEST_CI_PATH}/script/ut_run.py ${TEST_CI_PATH}/src/Makefile
