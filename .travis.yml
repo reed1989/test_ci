@@ -1,0 +1,5 @@
+language: cpp
+
+dist: xenial
+
+install: git clone https://github.com/abseil/googletest.git
