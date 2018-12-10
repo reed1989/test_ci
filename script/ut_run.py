@@ -8,11 +8,13 @@ import subprocess
 def main():
     make_file_path = sys.argv[1]
     dir_path = os.path.dirname(os.path.realpath(make_file_path))
+	print("dir_path is:" + dir_path)
 
     p_clean = subprocess.run(["make clean", "-f", make_file_path],
                              shell=True,
                              stdout=subprocess.PIPE,
                              stderr=subprocess.STDOUT)
+    print(p_clean)
     print(p_clean.stdout.decode('utf-8'))
 
     p_make = subprocess.run(["make", "-f", make_file_path],
