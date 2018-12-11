@@ -9,16 +9,16 @@ def main():
     make_file_path = sys.argv[1]
     dir_path = os.path.dirname(os.path.realpath(make_file_path))
 
-    print("Start to make clean")
-    p_clean = subprocess.Popen(["make clean", "-f", make_file_path],
-                               shell=True,
-                               stdout=subprocess.PIPE,
-                               stderr=subprocess.STDOUT,
-                               cwd=dir_path)
-    p_clean.wait()
+#    print("Start to make clean")
+#    p_clean = subprocess.Popen(["make clean", "-f", make_file_path],
+#                               shell=True,
+#                               stdout=subprocess.PIPE,
+#                               stderr=subprocess.STDOUT,
+#                               cwd=dir_path)
+#    p_clean.wait()
     # for line in p_clean.stdout.readline():
     #     print(line)
-    print(p_clean.stdout.read().decode('utf-8'))
+#    print(p_clean.stdout.read().decode('utf-8'))
 
     print("Start to make make")
     p_make = subprocess.Popen(["make", "-f", make_file_path, "-C", dir_path],
