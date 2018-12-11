@@ -21,7 +21,7 @@ def main():
 #    print(p_clean.stdout.read().decode('utf-8'))
 
     print("Start to make make")
-    p_make = subprocess.Popen(["make", "-f", make_file_path, "-C", dir_path],
+    p_make = subprocess.Popen(["make"],
                               shell=True,
                               stdout=subprocess.PIPE,
                               stderr=subprocess.STDOUT,
