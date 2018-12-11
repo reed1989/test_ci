@@ -9,6 +9,7 @@ def main():
     make_file_path = sys.argv[1]
     dir_path = os.path.dirname(os.path.realpath(make_file_path))
 
+    print("Start to make clean")
     p_clean = subprocess.Popen(["make clean", "-f", make_file_path],
                                shell=True,
                                stdout=subprocess.PIPE,
@@ -19,6 +20,7 @@ def main():
     #     print(line)
     print(p_clean.stdout.read().decode('utf-8'))
 
+    print("Start to make make")
     p_make = subprocess.Popen(["make", "-f", make_file_path],
                               shell=True,
                               stdout=subprocess.PIPE,
@@ -29,6 +31,7 @@ def main():
     #     print(line)
     print(p_make.stdout.read().decode('utf-8'))
 
+    print("Start to make execute the test case")
     run_test_file = os.path.join(dir_path, "./run_test")
     p_run = subprocess.Popen([run_test_file],
                              shell=True,
