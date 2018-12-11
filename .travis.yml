@@ -11,4 +11,4 @@ jobs:
           name: "UT Execute"
           #no need to do clone tools
           before_install: git clone https://github.com/abseil/googletest.git ${HOME}/build/gtest
-          script: python3 ${TEST_CI_PATH}/script/ut_run.py ${TEST_CI_PATH}/src/Makefile
+          script: sh ${TEST_CI_PATH}/script/ut_run.sh ${TEST_CI_PATH}/src/Makefile
